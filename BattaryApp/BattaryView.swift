@@ -147,7 +147,7 @@ class BattaryView: UIView {
                 
                 batteryBorderPath = UIBezierPath(roundedRect: CGRect(x: rectX + rectRatioS, y: (rectY + (rect.width * 0.025)) + (batBottom * index), width: right - rectRatioS, height: (rectY + (rect.width * 0.022)) + batBottom * sector), cornerRadii: [0.0, 0.0, 0.0, 0.0, batRadius, batRadius, batRadius, batRadius])
                 
-                batteryBorderPath = UIBezierPath(roundedRect: CGRect(x: rectX + (width * 0.023), y: progressTop + levelPoint, width: right - (width * 0.023), height: progressBottom), cornerRadius: 0.0)
+                batteryBorderPath = UIBezierPath(roundedRect: CGRect(x: rectX + (rect.width * 0.023), y: progressTop + levelPoint, width: right - (width * 0.023), height: progressBottom), cornerRadius: 0.0)
                                 
                 thresholdLinePath.move(to: CGPoint(x: rectX + rectRatioS, y: (rectY + (rect.width * 0.023)) + (batBottom * index)))
                 thresholdLinePath.addQuadCurve(to: CGPoint(x: right + (rect.width * 0.03), y: (rectY + (rect.width * 0.023)) + (batBottom * index)), controlPoint: CGPoint(x: right + (rect.width * 0.03), y: (rectY + (rect.width * 0.023)) + (batBottom * index)))
@@ -156,8 +156,8 @@ class BattaryView: UIView {
                 
                 textYPoints.append(CGFloat(progressTop + (progressBottom - progressTop) * 0.7))
             } else {
-                let progressBottom = (rectY + (width * 0.0195)) + batBottom * sector
-                let progressTop = (rectY + (width * 0.0245)) + batBottom * (sector - 1)
+                let progressBottom = (rectY + (rect.width * 0.0195)) + batBottom * sector
+                let progressTop = (rectY + (rect.width * 0.0245)) + batBottom * (sector - 1)
                 let levelPoint = (progressBottom - progressTop) * (1.0 - batLevel)
                 
                 
